@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IMPA Golf - Träna smartare, spela bättre</title>
+  <meta name="description" content="IMPA Golf hjälper dig fokusera på rätt saker. Analysera din statistik, hitta dina svagheter och få personliga träningsrekommendationer.">
+  <link rel="icon" type="image/png" sizes="96x96" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================
+       IMPA GOLF LANDING PAGE - 2026
+       75% App Focus / 25% Physical Facilities
+       ============================================ */
+
+    :root {
+      --primary: #06b6d4;      /* Cyan - huvudfärg */
+      --primary-dark: #0891b2;
+      --accent: #10b981;       /* Emerald - accent */
+      --dark-bg: #0a0a0f;
+      --dark-card: #1e1e24;
+      --dark-border: #2a2a2f;
+      --text-white: #ffffff;
+      --text-gray: #94a3b8;
+      --text-muted: #64748b;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--dark-bg);
+      color: var(--text-white);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ============ NAVIGATION ============ */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(10, 10, 15, 0.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--dark-border);
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .nav-logo {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--text-white);
+      text-decoration: none;
+    }
+
+    .nav-logo span {
+      color: var(--primary);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-gray);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .nav-cta {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: white;
+      padding: 10px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(6, 182, 212, 0.3);
+    }
+
+    /* ============ HERO SECTION ============ */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 120px 0 80px;
+      background:
+        radial-gradient(ellipse at top right, rgba(6, 182, 212, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at bottom left, rgba(16, 185, 129, 0.1) 0%, transparent 50%),
+        var(--dark-bg);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(6, 182, 212, 0.1);
+      border: 1px solid rgba(6, 182, 212, 0.3);
+      padding: 8px 16px;
+      border-radius: 50px;
+      font-size: 14px;
+      color: var(--primary);
+      margin-bottom: 24px;
+    }
+
+    .hero-title {
+      font-size: 56px;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 24px;
+    }
+
+    .hero-title .highlight {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-subtitle {
+      font-size: 20px;
+      color: var(--text-gray);
+      margin-bottom: 40px;
+      max-width: 500px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: white;
+      padding: 16px 32px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(6, 182, 212, 0.4);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--dark-card);
+      border: 1px solid var(--dark-border);
+      color: var(--text-white);
+      padding: 16px 32px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .btn-secondary:hover {
+      background: var(--dark-border);
+      border-color: var(--text-muted);
+    }
+
+    .hero-image {
+      position: relative;
+    }
+
+    .hero-phone {
+      width: 100%;
+      max-width: 350px;
+      margin: 0 auto;
+      display: block;
+      filter: drop-shadow(0 40px 80px rgba(6, 182, 212, 0.3));
+    }
+
+    /* ============ PROBLEM/SOLUTION ============ */
+    .problem-section {
+      padding: 100px 0;
+      background: var(--dark-card);
+    }
+
+    .problem-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+    }
+
+    .problem-side h2 {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #ef4444;
+      margin-bottom: 16px;
+    }
+
+    .solution-side h2 {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    .problem-grid h3 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+
+    .problem-list {
+      list-style: none;
+    }
+
+    .problem-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 16px;
+      color: var(--text-gray);
+    }
+
+    .problem-list .icon {
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+    }
+
+    .problem-list .icon-bad {
+      background: rgba(239, 68, 68, 0.2);
+      color: #ef4444;
+    }
+
+    .problem-list .icon-good {
+      background: rgba(16, 185, 129, 0.2);
+      color: var(--accent);
+    }
+
+    /* ============ FEATURES ============ */
+    .features-section {
+      padding: 100px 0;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 64px;
+    }
+
+    .section-badge {
+      display: inline-block;
+      background: rgba(6, 182, 212, 0.1);
+      border: 1px solid rgba(6, 182, 212, 0.3);
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--primary);
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-size: 40px;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    .section-subtitle {
+      font-size: 18px;
+      color: var(--text-gray);
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    .feature-card {
+      background: var(--dark-card);
+      border: 1px solid var(--dark-border);
+      border-radius: 20px;
+      padding: 32px;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--primary);
+    }
+
+    .feature-icon {
+      width: 56px;
+      height: 56px;
+      background: linear-gradient(135deg, rgba(6, 182, 212, 0.2), rgba(16, 185, 129, 0.1));
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+
+    .feature-title {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .feature-desc {
+      color: var(--text-gray);
+      font-size: 15px;
+    }
+
+    /* ============ HOW IT WORKS ============ */
+    .how-section {
+      padding: 100px 0;
+      background: var(--dark-card);
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 48px;
+      margin-top: 64px;
+    }
+
+    .step-card {
+      text-align: center;
+      position: relative;
+    }
+
+    .step-number {
+      width: 64px;
+      height: 64px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      font-weight: 800;
+      margin: 0 auto 24px;
+    }
+
+    .step-title {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .step-desc {
+      color: var(--text-gray);
+      font-size: 15px;
+    }
+
+    /* Arrow between steps */
+    .step-card:not(:last-child)::after {
+      content: '\2192';
+      position: absolute;
+      right: -32px;
+      top: 32px;
+      font-size: 24px;
+      color: var(--dark-border);
+    }
+
+    /* ============ APP PREVIEW ============ */
+    .preview-section {
+      padding: 100px 0;
+      overflow: hidden;
+    }
+
+    .preview-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .preview-content h2 {
+      font-size: 36px;
+      font-weight: 800;
+      margin-bottom: 24px;
+    }
+
+    .preview-content p {
+      color: var(--text-gray);
+      font-size: 18px;
+      margin-bottom: 32px;
+    }
+
+    .preview-features {
+      list-style: none;
+    }
+
+    .preview-features li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      color: var(--text-gray);
+    }
+
+    .preview-features .check {
+      width: 24px;
+      height: 24px;
+      background: rgba(16, 185, 129, 0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .preview-phones {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+    }
+
+    .preview-phones img {
+      width: 220px;
+      filter: drop-shadow(0 20px 60px rgba(0, 0, 0, 0.5));
+    }
+
+    .preview-phones img:nth-child(2) {
+      margin-top: 40px;
+    }
+
+    /* ============ FACILITIES (25%) ============ */
+    .facilities-section {
+      padding: 100px 0;
+      background: linear-gradient(180deg, var(--dark-bg) 0%, var(--dark-card) 100%);
+    }
+
+    .facilities-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+      margin-top: 64px;
+    }
+
+    .facility-card {
+      background: var(--dark-bg);
+      border: 1px solid var(--dark-border);
+      border-radius: 24px;
+      overflow: hidden;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+
+    .facility-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent);
+    }
+
+    .facility-image {
+      height: 200px;
+      background: linear-gradient(135deg, var(--dark-card), var(--dark-border));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 48px;
+    }
+
+    .facility-content {
+      padding: 32px;
+    }
+
+    .facility-badge {
+      display: inline-block;
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      padding: 4px 12px;
+      border-radius: 50px;
+      font-size: 12px;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+
+    .facility-title {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .facility-desc {
+      color: var(--text-gray);
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
+
+    .facility-features {
+      list-style: none;
+      margin-bottom: 24px;
+    }
+
+    .facility-features li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-muted);
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .facility-features li::before {
+      content: '\2713';
+      color: var(--accent);
+    }
+
+    .facility-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      transition: gap 0.2s;
+    }
+
+    .facility-link:hover {
+      gap: 12px;
+    }
+
+    /* ============ CTA SECTION ============ */
+    .cta-section {
+      padding: 100px 0;
+      text-align: center;
+      background:
+        radial-gradient(ellipse at center, rgba(6, 182, 212, 0.2) 0%, transparent 60%),
+        var(--dark-bg);
+    }
+
+    .cta-box {
+      background: var(--dark-card);
+      border: 1px solid var(--dark-border);
+      border-radius: 32px;
+      padding: 64px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .cta-title {
+      font-size: 40px;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    .cta-subtitle {
+      font-size: 18px;
+      color: var(--text-gray);
+      margin-bottom: 40px;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .coming-soon-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(251, 191, 36, 0.1);
+      border: 1px solid rgba(251, 191, 36, 0.3);
+      padding: 8px 16px;
+      border-radius: 50px;
+      font-size: 14px;
+      color: #fbbf24;
+      margin-top: 24px;
+    }
+
+    /* ============ FOOTER ============ */
+    .footer {
+      padding: 64px 0 32px;
+      border-top: 1px solid var(--dark-border);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+
+    .footer-brand h3 {
+      font-size: 24px;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    .footer-brand h3 span {
+      color: var(--primary);
+    }
+
+    .footer-brand p {
+      color: var(--text-muted);
+      font-size: 14px;
+      max-width: 300px;
+    }
+
+    .footer-links h4 {
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+      color: var(--text-gray);
+    }
+
+    .footer-links ul {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 12px;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: var(--primary);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 32px;
+      border-top: 1px solid var(--dark-border);
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 16px;
+    }
+
+    .footer-social a {
+      width: 40px;
+      height: 40px;
+      background: var(--dark-card);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-gray);
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .footer-social a:hover {
+      background: var(--primary);
+      color: white;
+    }
+
+    /* ============ RESPONSIVE ============ */
+    @media (max-width: 1024px) {
+      .hero-grid,
+      .preview-grid,
+      .problem-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      .hero-image {
+        order: -1;
+      }
+
+      .hero-title {
+        font-size: 40px;
+      }
+
+      .features-grid,
+      .steps-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .step-card::after {
+        display: none;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero-title {
+        font-size: 32px;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+      .btn-primary,
+      .btn-secondary {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .section-title {
+        font-size: 28px;
+      }
+
+      .facilities-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-box {
+        padding: 40px 24px;
+      }
+
+      .cta-title {
+        font-size: 28px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .footer-brand p {
+        margin: 0 auto;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">IMPA <span>Golf</span></a>
+      <ul class="nav-links">
+        <li><a href="#features">Funktioner</a></li>
+        <li><a href="#how">Hur det fungerar</a></li>
+        <li><a href="#facilities">Anläggningar</a></li>
+        <li><a href="#contact">Kontakt</a></li>
+      </ul>
+      <a href="https://totalgolf.vercel.app" class="nav-cta">Prova gratis</a>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span>&#x1F4F1;</span>
+            <span>Snart i App Store &amp; Google Play</span>
+          </div>
+          <h1 class="hero-title">
+            Träna smartare,<br>
+            <span class="highlight">spela bättre golf</span>
+          </h1>
+          <p class="hero-subtitle">
+            IMPA Golf hjälper dig fokusera på rätt saker. Analysera din statistik,
+            hitta dina svagheter och få personliga träningsrekommendationer.
+          </p>
+          <div class="hero-buttons">
+            <a href="https://totalgolf.vercel.app" class="btn-primary">
+              <span>&#x25B6;</span> Prova appen gratis
+            </a>
+            <a href="#how" class="btn-secondary">
+              <span>&#x2139;</span> Så fungerar det
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-image">
+          <!-- TODO: Byt mot riktig app-screenshot i telefonmockup -->
+          <div style="width: 280px; height: 560px; background: linear-gradient(135deg, #1e1e24 0%, #0a0a0f 100%); border-radius: 40px; margin: 0 auto; border: 3px solid #2a2a2f; display: flex; align-items: center; justify-content: center; color: #64748b; text-align: center; padding: 20px;">
+            App-screenshot<br>kommer snart
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM / SOLUTION -->
+  <section class="problem-section">
+    <div class="container">
+      <div class="problem-grid">
+        <div class="problem-side">
+          <h2>Problemet</h2>
+          <h3>De flesta golfare tränar fel</h3>
+          <ul class="problem-list">
+            <li>
+              <span class="icon icon-bad">&#x2715;</span>
+              <span>Tränar samma sak varje gång utan plan</span>
+            </li>
+            <li>
+              <span class="icon icon-bad">&#x2715;</span>
+              <span>Vet inte vilka områden som kostar mest slag</span>
+            </li>
+            <li>
+              <span class="icon icon-bad">&#x2715;</span>
+              <span>Tittar på YouTube-tips istället för att mäta</span>
+            </li>
+            <li>
+              <span class="icon icon-bad">&#x2715;</span>
+              <span>Ingen uppföljning på om träningen ger resultat</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="solution-side">
+          <h2>Lösningen</h2>
+          <h3>Data-driven golfträning</h3>
+          <ul class="problem-list">
+            <li>
+              <span class="icon icon-good">&#x2713;</span>
+              <span>Strokes Gained visar exakt var du tappar slag</span>
+            </li>
+            <li>
+              <span class="icon icon-good">&#x2713;</span>
+              <span>Personliga rekommendationer baserat på din data</span>
+            </li>
+            <li>
+              <span class="icon icon-good">&#x2713;</span>
+              <span>Mätbara tester som visar faktisk förbättring</span>
+            </li>
+            <li>
+              <span class="icon icon-good">&#x2713;</span>
+              <span>Träna rätt saker, i rätt mängd, vid rätt tid</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features-section" id="features">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">Funktioner</div>
+        <h2 class="section-title">Allt du behöver för att bli bättre</h2>
+        <p class="section-subtitle">
+          Från statistikanalys till personliga träningsplaner - IMPA Golf ger dig verktygen.
+        </p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">&#x1F4CA;</div>
+          <h3 class="feature-title">Strokes Gained</h3>
+          <p class="feature-desc">
+            Se exakt var du tappar slag jämfört med ditt handicap. Utslag, inspel, närspel eller puttning?
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">&#x1F3AF;</div>
+          <h3 class="feature-title">Spridningstester</h3>
+          <p class="feature-desc">
+            Mät din precision med varje klubba. Se din ellips krympa över tid.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">&#x1F9E0;</div>
+          <h3 class="feature-title">Smarta rekommendationer</h3>
+          <p class="feature-desc">
+            Appen föreslår vad du ska träna baserat på din data, säsong och tid.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">&#x1F5FA;&#xFE0F;</div>
+          <h3 class="feature-title">Spelstrategi</h3>
+          <p class="feature-desc">
+            Visuell course management. Se din spridningsellips på kartan innan du slår.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">&#x1F4F1;</div>
+          <h3 class="feature-title">Rund-loggning</h3>
+          <p class="feature-desc">
+            Quick eller Detailed mode. Logga rundor snabbt och få statistik direkt.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">&#x1F3B5;</div>
+          <h3 class="feature-title">Tempo-träning</h3>
+          <p class="feature-desc">
+            Metronom för din sving. Hitta och behåll din optimala takt.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how-section" id="how">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">Hur det fungerar</div>
+        <h2 class="section-title">Tre steg till bättre golf</h2>
+        <p class="section-subtitle">
+          Börja mäta, förstå dina svagheter, och träna rätt.
+        </p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <h3 class="step-title">Testa</h3>
+          <p class="step-desc">
+            Gör spridningstester och PEI-tester för att etablera din baseline.
+            Spela rundor och logga din statistik.
+          </p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <h3 class="step-title">Analysera</h3>
+          <p class="step-desc">
+            Appen beräknar ditt Strokes Gained per kategori och identifierar
+            var du tappar mest slag.
+          </p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <h3 class="step-title">Träna rätt</h3>
+          <p class="step-desc">
+            Följ personliga rekommendationer. Mät din progress varje månad.
+            Se resultaten.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APP PREVIEW -->
+  <section class="preview-section">
+    <div class="container">
+      <div class="preview-grid">
+        <div class="preview-content">
+          <h2>Designad för golfare,<br>av golfare</h2>
+          <p>
+            IMPA Golf fokuserar på det som spelar roll: att hjälpa dig lägga rätt tid
+            på rätt saker. Ingen fluff, bara data och konkreta förslag.
+          </p>
+          <ul class="preview-features">
+            <li>
+              <span class="check">&#x2713;</span>
+              <span>Fungerar offline på banan</span>
+            </li>
+            <li>
+              <span class="check">&#x2713;</span>
+              <span>Synkar mellan enheter</span>
+            </li>
+            <li>
+              <span class="check">&#x2713;</span>
+              <span>Svenska - byggt i Sverige</span>
+            </li>
+            <li>
+              <span class="check">&#x2713;</span>
+              <span>Gratis att komma igång</span>
+            </li>
+          </ul>
+          <a href="https://totalgolf.vercel.app" class="btn-primary">
+            Testa nu - helt gratis
+          </a>
+        </div>
+
+        <div class="preview-phones">
+          <!-- TODO: Byt mot riktiga app-screenshots -->
+          <div style="width: 200px; height: 400px; background: linear-gradient(135deg, #1e1e24 0%, #0a0a0f 100%); border-radius: 32px; border: 2px solid #2a2a2f; display: flex; align-items: center; justify-content: center; color: #64748b; text-align: center; padding: 16px; font-size: 12px;">
+            Screenshot 1:<br>Statistik
+          </div>
+          <div style="width: 200px; height: 400px; background: linear-gradient(135deg, #1e1e24 0%, #0a0a0f 100%); border-radius: 32px; border: 2px solid #2a2a2f; display: flex; align-items: center; justify-content: center; color: #64748b; text-align: center; padding: 16px; font-size: 12px; margin-top: 40px;">
+            Screenshot 2:<br>Spridningstest
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FACILITIES (25%) -->
+  <section class="facilities-section" id="facilities">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">Anläggningar</div>
+        <h2 class="section-title">Träna live med oss</h2>
+        <p class="section-subtitle">
+          Kombinera appen med riktiga träningspass på våra anläggningar i Stockholm.
+        </p>
+      </div>
+
+      <div class="facilities-grid">
+        <div class="facility-card">
+          <div class="facility-image">&#x1F3CC;&#xFE0F;</div>
+          <div class="facility-content">
+            <span class="facility-badge">Vinter (inomhus)</span>
+            <h3 class="facility-title">IMPA Golf Sigtuna</h3>
+            <p class="facility-desc">
+              Indoor-anläggning i samarbete med WE Träning &amp; Hälsa.
+              Perfekt för vinterträning med Foresight GCQuad.
+            </p>
+            <ul class="facility-features">
+              <li>2 simulatorer med Foresight Sports</li>
+              <li>WE-Plus medlemskap</li>
+              <li>Grupplektioner ingår</li>
+            </ul>
+            <a href="#" class="facility-link">
+              Läs mer <span>&#x2192;</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="facility-card">
+          <div class="facility-image">&#x2600;&#xFE0F;</div>
+          <div class="facility-content">
+            <span class="facility-badge">Sommar (utomhus)</span>
+            <h3 class="facility-title">IMPA Golf Arlandastad</h3>
+            <p class="facility-desc">
+              Sveriges enda utomhusanläggning med launch monitors på varje plats.
+              Träna från gräs med exakta mätvärden.
+            </p>
+            <ul class="facility-features">
+              <li>4 platser med Foresight GCQuad</li>
+              <li>Övertäckt med kvällsbelysning</li>
+              <li>Personlig träning med data</li>
+            </ul>
+            <a href="#" class="facility-link">
+              Läs mer <span>&#x2192;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="cta-section" id="contact">
+    <div class="container">
+      <div class="cta-box">
+        <h2 class="cta-title">Redo att träna smartare?</h2>
+        <p class="cta-subtitle">
+          Prova IMPA Golf gratis idag. Ingen registrering krävs - börja direkt.
+        </p>
+        <div class="cta-buttons">
+          <a href="https://totalgolf.vercel.app" class="btn-primary">
+            <span>&#x25B6;</span> Starta appen
+          </a>
+          <a href="mailto:kontakt@impagolf.se" class="btn-secondary">
+            <span>&#x2709;</span> Kontakta oss
+          </a>
+        </div>
+        <div class="coming-soon-badge">
+          <span>&#x1F4F1;</span>
+          <span>Kommer snart till App Store &amp; Google Play</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>IMPA <span>Golf</span></h3>
+          <p>
+            Improve &amp; Perform Academy. Vi hjälper golfare träna smartare
+            genom data-driven analys och personliga träningsplaner.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <h4>App</h4>
+          <ul>
+            <li><a href="https://totalgolf.vercel.app">Öppna appen</a></li>
+            <li><a href="#features">Funktioner</a></li>
+            <li><a href="#how">Hur det fungerar</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Anläggningar</h4>
+          <ul>
+            <li><a href="#">Sigtuna (vinter)</a></li>
+            <li><a href="#">Arlandastad (sommar)</a></li>
+            <li><a href="#">Boka träning</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Kontakt</h4>
+          <ul>
+            <li><a href="mailto:kontakt@impagolf.se">kontakt@impagolf.se</a></li>
+            <li><a href="https://totalgolf.vercel.app/privacy.html">Integritetspolicy</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 IMPA Golf. Alla rättigheter förbehållna.</span>
+        <div class="footer-social">
+          <a href="https://facebook.com/impagolf" aria-label="Facebook">f</a>
+          <a href="https://instagram.com/impagolf" aria-label="Instagram">&#x1F4F7;</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
