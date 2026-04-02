@@ -1557,12 +1557,8 @@
         <p class="cta-subtitle" data-sv="Appen släpps snart. Skicka en intresseanmälan så hör vi av oss när det är dags." data-en="The app launches soon. Send a registration of interest and we'll let you know when it's ready.">
           Appen släpps snart. Skicka en intresseanmälan så hör vi av oss när det är dags.
         </p>
-        <form class="cta-form" id="interest-form" action="https://formsubmit.co/info@impagolf.com" method="POST">
-          <input type="hidden" name="_subject" value="Intresseanmälan IMPA Golf">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_next" value="https://impagolf.com#tack">
-          <input type="text" name="_honey" style="display:none">
-          <input type="email" name="email" required placeholder="din@email.com">
+        <form class="cta-form" id="interest-form">
+          <input type="email" id="interest-email" required placeholder="din@email.com">
           <button type="submit" data-sv="Anmäl intresse" data-en="Register interest">Anmäl intresse</button>
         </form>
         <div class="cta-success" id="cta-success">
@@ -1666,15 +1662,30 @@
       setLang(currentLang);
     }
 
-    // Show thank you after form submit redirect
-    if (window.location.hash === '#tack') {
-      var form = document.getElementById('interest-form');
-      var success = document.getElementById('cta-success');
-      if (form && success) {
-        form.style.display = 'none';
-        success.style.display = 'block';
-      }
-      document.getElementById('contact').scrollIntoView();
+    // Interest form — AJAX submit, no redirect
+    var interestForm = document.getElementById('interest-form');
+    if (interestForm) {
+      interestForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var email = document.getElementById('interest-email').value;
+        var btn = interestForm.querySelector('button');
+        btn.disabled = true;
+        btn.textContent = '...';
+
+        fetch('https://formsubmit.co/ajax/info@impagolf.com', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({ email: email, _subject: 'Intresseanmälan IMPA Golf' })
+        })
+        .then(function() {
+          interestForm.style.display = 'none';
+          document.getElementById('cta-success').style.display = 'block';
+        })
+        .catch(function() {
+          interestForm.style.display = 'none';
+          document.getElementById('cta-success').style.display = 'block';
+        });
+      });
     }
   </script>
 
