@@ -865,11 +865,6 @@
       padding: 20px;
     }
 
-    .cta-highlight-icon {
-      font-size: 24px;
-      margin-bottom: 8px;
-    }
-
     .cta-highlight-title {
       font-size: 15px;
       font-weight: 700;
@@ -981,8 +976,45 @@
     }
 
     .coach-card-icon {
-      font-size: 32px;
-      margin-bottom: 16px;
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, rgba(6, 182, 212, 0.15), rgba(16, 185, 129, 0.08));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .coach-card-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: var(--primary);
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+    }
+
+    .cta-highlight-icon {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, rgba(6, 182, 212, 0.18), rgba(16, 185, 129, 0.1));
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 14px;
+    }
+
+    .cta-highlight-icon svg {
+      width: 22px;
+      height: 22px;
+      stroke: var(--primary);
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
     }
 
     .coach-card-title {
@@ -1627,6 +1659,76 @@
     </div>
   </section>
 
+  <!-- CTA SECTION (player signup) -->
+  <section class="cta-section" id="contact">
+    <div class="container">
+      <div class="cta-box">
+        <h2 class="cta-title" data-sv="Intresserad av appen?" data-en="Interested in the app?">Intresserad av appen?</h2>
+        <p class="cta-subtitle" data-sv="Är du golfspelare och vill testa IMPA Golf? Skicka en intresseanmälan så hör vi av oss när appen släpps." data-en="Are you a golfer who wants to try IMPA Golf? Send a registration of interest and we'll let you know when the app launches.">
+          Är du golfspelare och vill testa IMPA Golf? Skicka en intresseanmälan så hör vi av oss när appen släpps.
+        </p>
+        <form class="cta-form" id="interest-form">
+          <input type="email" id="interest-email" required placeholder="din@email.com">
+          <button type="submit" data-sv="Anmäl intresse" data-en="Register interest">Anmäl intresse</button>
+        </form>
+        <div class="cta-success" id="cta-success">
+          <span>&#x2713;</span> <span data-sv="Tack! Vi hör av oss." data-en="Thanks! We'll be in touch.">Tack! Vi hör av oss.</span>
+        </div>
+        <div class="coming-soon-badge">
+          <span>&#x1F4F1;</span>
+          <span data-sv="Kommer snart till App Store &amp; Google Play" data-en="Coming soon to App Store &amp; Google Play">Kommer snart till App Store &amp; Google Play</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COACH SECTION -->
+  <section class="coach-section" id="coaches">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge" data-sv="För coacher" data-en="For coaches">För coacher</div>
+        <h2 class="section-title" data-sv="Är du tränare?" data-en="Are you a coach?">Är du tränare?</h2>
+        <p class="section-subtitle" data-sv="Bjud in dina spelare och följ deras utveckling — helt kostnadsfritt." data-en="Invite your players and follow their progress — completely free.">
+          Bjud in dina spelare och följ deras utveckling — helt kostnadsfritt.
+        </p>
+      </div>
+
+      <div class="coach-grid">
+        <div class="coach-card">
+          <div class="coach-card-icon"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <h3 class="coach-card-title" data-sv="Följ dina spelare" data-en="Follow your players">Följ dina spelare</h3>
+          <p class="coach-card-desc" data-sv="Se rundor, tester och utveckling i realtid. Få full inblick i vad spelaren tränar på och var de behöver hjälp." data-en="See rounds, tests and progress in real time. Get full insight into what the player is practicing and where they need help.">
+            Se rundor, tester och utveckling i realtid. Få full inblick i vad spelaren tränar på och var de behöver hjälp.
+          </p>
+        </div>
+
+        <div class="coach-card">
+          <div class="coach-card-icon"><svg viewBox="0 0 24 24"><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M9 12h6"/><path d="M9 16h6"/></svg></div>
+          <h3 class="coach-card-title" data-sv="Testa under lektioner" data-en="Run tests during lessons">Testa under lektioner</h3>
+          <p class="coach-card-desc" data-sv="Kör spridningstester och PEI-tester direkt åt spelaren under lektionen — datan sparas till spelarens konto." data-en="Run dispersion and PEI tests directly for the player during the lesson — the data is saved to the player's account.">
+            Kör spridningstester och PEI-tester direkt åt spelaren under lektionen — datan sparas till spelarens konto.
+          </p>
+        </div>
+
+        <div class="coach-card">
+          <div class="coach-card-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+          <h3 class="coach-card-title" data-sv="Ge feedback i realtid" data-en="Give real-time feedback">Ge feedback i realtid</h3>
+          <p class="coach-card-desc" data-sv="Skicka anteckningar, övningar och meddelanden direkt till spelaren — mellan lektionerna." data-en="Send notes, exercises and messages directly to the player — between lessons.">
+            Skicka anteckningar, övningar och meddelanden direkt till spelaren — mellan lektionerna.
+          </p>
+        </div>
+
+        <div class="coach-card">
+          <div class="coach-card-icon"><svg viewBox="0 0 24 24"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg></div>
+          <h3 class="coach-card-title" data-sv="Gratis för coacher" data-en="Free for coaches">Gratis för coacher</h3>
+          <p class="coach-card-desc" data-sv="Coach-rollen är helt gratis. Du betalar inget för att följa dina spelare — appen är ett verktyg som hjälper dig leverera bättre coaching." data-en="The coach role is completely free. You pay nothing to follow your players — the app is a tool that helps you deliver better coaching.">
+            Coach-rollen är helt gratis. Du betalar inget för att följa dina spelare — appen är ett verktyg som hjälper dig leverera bättre coaching.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- FACILITIES (25%) -->
   <section class="facilities-section" id="facilities">
     <div class="container">
@@ -1685,66 +1787,24 @@
     </div>
   </section>
 
-  <!-- COACH SECTION -->
-  <section class="coach-section" id="coaches">
+  <!-- BECOME IMPA FACILITY -->
+  <section class="cta-section" id="become-facility">
     <div class="container">
-      <div class="section-header">
-        <div class="section-badge" data-sv="För coacher" data-en="For coaches">För coacher</div>
-        <h2 class="section-title" data-sv="Är du tränare?" data-en="Are you a coach?">Är du tränare?</h2>
-        <p class="section-subtitle" data-sv="Bjud in dina spelare utan extra kostnad. Följ deras utveckling, genomför tester och ge feedback — allt på ett ställe." data-en="Invite your players at no extra cost. Track their progress, run tests and give feedback — all in one place.">
-          Bjud in dina spelare utan extra kostnad. Följ deras utveckling, genomför tester och ge feedback — allt på ett ställe.
-        </p>
-      </div>
-
-      <div class="coach-grid">
-        <div class="coach-card">
-          <div class="coach-card-icon">&#x1F4CA;</div>
-          <h3 class="coach-card-title" data-sv="Följ dina spelare" data-en="Follow your players">Följ dina spelare</h3>
-          <p class="coach-card-desc" data-sv="Se rundor, tester och statistik från alla dina spelare på en samlad dashboard." data-en="See rounds, tests and statistics from all your players in one dashboard.">
-            Se rundor, tester och statistik från alla dina spelare på en samlad dashboard.
-          </p>
-        </div>
-
-        <div class="coach-card">
-          <div class="coach-card-icon">&#x1F3AF;</div>
-          <h3 class="coach-card-title" data-sv="Testa under lektioner" data-en="Run tests during lessons">Testa under lektioner</h3>
-          <p class="coach-card-desc" data-sv="Genomför spridningstester och PEI direkt åt spelaren — datan sparas på deras konto." data-en="Run dispersion tests and PEI directly for your player — the data is saved to their account.">
-            Genomför spridningstester och PEI direkt åt spelaren — datan sparas på deras konto.
-          </p>
-        </div>
-
-        <div class="coach-card">
-          <div class="coach-card-icon">&#x1F4AC;</div>
-          <h3 class="coach-card-title" data-sv="Ge feedback i realtid" data-en="Give feedback in real time">Ge feedback i realtid</h3>
-          <p class="coach-card-desc" data-sv="Skicka anteckningar, lektionslogg och övningar som spelaren ser direkt i sin app." data-en="Send notes, lesson logs and drills that your player sees instantly in their app.">
-            Skicka anteckningar, lektionslogg och övningar som spelaren ser direkt i sin app.
-          </p>
-        </div>
-
-        <div class="coach-card">
-          <div class="coach-card-icon">&#x1F193;</div>
-          <h3 class="coach-card-title" data-sv="Gratis för coacher" data-en="Free for coaches">Gratis för coacher</h3>
-          <p class="coach-card-desc" data-sv="Coachkontot är kostnadsfritt — bara dina spelare betalar för sin prenumeration." data-en="The coach account is free — only your players pay for their subscription.">
-            Coachkontot är kostnadsfritt — bara dina spelare betalar för sin prenumeration.
-          </p>
-        </div>
-      </div>
-
       <div class="cta-box">
         <h2 class="cta-title" data-sv="Bli en IMPA-anläggning" data-en="Become an IMPA facility">Bli en IMPA-anläggning</h2>
-        <p class="cta-subtitle" data-sv="Driver du en golfanläggning eller jobbar som tränare? Hör av dig så berättar vi vilka fördelar du kan få genom att bli en del av IMPA Golf — för dig och dina spelare." data-en="Run a golf facility or work as a coach? Get in touch and we'll tell you what you can gain from joining IMPA Golf — for yourself and your players.">
-          Driver du en golfanläggning eller jobbar som tränare? Hör av dig så berättar vi vilka fördelar du kan få genom att bli en del av IMPA Golf — för dig och dina spelare.
+        <p class="cta-subtitle" data-sv="Driver du en golfanläggning eller jobbar på golfklubb? Hör av dig så berättar vi vilka fördelar du kan få genom att bli en del av IMPA Golf." data-en="Run a golf facility or work at a golf club? Get in touch and we'll tell you what you can gain from joining IMPA Golf.">
+          Driver du en golfanläggning eller jobbar på golfklubb? Hör av dig så berättar vi vilka fördelar du kan få genom att bli en del av IMPA Golf.
         </p>
         <div class="cta-highlights">
           <div class="cta-highlight">
-            <div class="cta-highlight-icon">&#x1F3CC;</div>
+            <div class="cta-highlight-icon"><svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
             <h4 class="cta-highlight-title" data-sv="Paketlösning för juniorverksamheter" data-en="Package solution for junior programs">Paketlösning för juniorverksamheter</h4>
             <p class="cta-highlight-desc" data-sv="Vi erbjuder en skräddarsydd lösning på klubbnivå för dig som vill ge dina juniorer ett verktyg som gör träningen mätbar och utvecklingen synlig." data-en="We offer a tailored club-level solution for those who want to give their juniors a tool that makes practice measurable and development visible.">
               Vi erbjuder en skräddarsydd lösning på klubbnivå för dig som vill ge dina juniorer ett verktyg som gör träningen mätbar och utvecklingen synlig.
             </p>
           </div>
           <div class="cta-highlight">
-            <div class="cta-highlight-icon">&#x1F4CA;</div>
+            <div class="cta-highlight-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
             <h4 class="cta-highlight-title" data-sv="För anläggningar med simulator eller data-driven range" data-en="For facilities with simulators or data-driven ranges">För anläggningar med simulator eller data-driven range</h4>
             <p class="cta-highlight-desc" data-sv="Driver du en anläggning med Foresight, Trackman eller TopTracer? IMPA Golf hjälper dina spelare att samla all sin data på ett ställe — och tar träningen från enskilda pass till långsiktig utveckling." data-en="Run a facility with Foresight, Trackman or TopTracer? IMPA Golf helps your players collect all their data in one place — turning individual sessions into long-term development.">
               Driver du en anläggning med Foresight, Trackman eller TopTracer? IMPA Golf hjälper dina spelare att samla all sin data på ett ställe — och tar träningen från enskilda pass till långsiktig utveckling.
@@ -1760,29 +1820,6 @@
         </form>
         <div class="facility-success" id="facility-success">
           <span>&#x2713;</span> <span data-sv="Tack! Vi hör av oss inom kort." data-en="Thanks! We'll get back to you soon.">Tack! Vi hör av oss inom kort.</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA SECTION -->
-  <section class="cta-section" id="contact">
-    <div class="container">
-      <div class="cta-box">
-        <h2 class="cta-title" data-sv="Intresserad?" data-en="Interested?">Intresserad?</h2>
-        <p class="cta-subtitle" data-sv="Appen släpps snart. Skicka en intresseanmälan så hör vi av oss när det är dags." data-en="The app launches soon. Send a registration of interest and we'll let you know when it's ready.">
-          Appen släpps snart. Skicka en intresseanmälan så hör vi av oss när det är dags.
-        </p>
-        <form class="cta-form" id="interest-form">
-          <input type="email" id="interest-email" required placeholder="din@email.com">
-          <button type="submit" data-sv="Anmäl intresse" data-en="Register interest">Anmäl intresse</button>
-        </form>
-        <div class="cta-success" id="cta-success">
-          <span>&#x2713;</span> <span data-sv="Tack! Vi hör av oss." data-en="Thanks! We'll be in touch.">Tack! Vi hör av oss.</span>
-        </div>
-        <div class="coming-soon-badge">
-          <span>&#x1F4F1;</span>
-          <span data-sv="Kommer snart till App Store &amp; Google Play" data-en="Coming soon to App Store &amp; Google Play">Kommer snart till App Store &amp; Google Play</span>
         </div>
       </div>
     </div>
