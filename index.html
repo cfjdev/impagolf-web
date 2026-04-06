@@ -846,7 +846,43 @@
     .cta-subtitle {
       font-size: 18px;
       color: var(--text-gray);
-      margin-bottom: 40px;
+      margin-bottom: 24px;
+    }
+
+    .cta-highlights {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      max-width: 720px;
+      margin: 0 auto 32px;
+      text-align: left;
+    }
+
+    .cta-highlight {
+      background: rgba(6, 182, 212, 0.08);
+      border: 1px solid rgba(6, 182, 212, 0.25);
+      border-radius: 12px;
+      padding: 20px;
+    }
+
+    .cta-highlight-icon {
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+
+    .cta-highlight-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text-white);
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+
+    .cta-highlight-desc {
+      font-size: 14px;
+      color: var(--text-gray);
+      line-height: 1.6;
+      margin: 0;
     }
 
     .cta-form {
@@ -915,6 +951,115 @@
       font-size: 14px;
       color: #fbbf24;
       margin-top: 24px;
+    }
+
+    /* ============ COACH SECTION ============ */
+    .coach-section {
+      padding: 100px 0;
+      background: var(--dark-bg);
+    }
+
+    .coach-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 64px;
+      margin-bottom: 64px;
+    }
+
+    .coach-card {
+      background: var(--dark-card);
+      border: 1px solid var(--dark-border);
+      border-radius: 20px;
+      padding: 32px;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+
+    .coach-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--primary);
+    }
+
+    .coach-card-icon {
+      font-size: 32px;
+      margin-bottom: 16px;
+    }
+
+    .coach-card-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .coach-card-desc {
+      color: var(--text-gray);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .facility-form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    .facility-form input,
+    .facility-form textarea {
+      width: 100%;
+      padding: 14px 20px;
+      border-radius: 12px;
+      border: 1px solid var(--dark-border);
+      background: var(--dark-bg);
+      color: var(--text-white);
+      font-size: 16px;
+      font-family: inherit;
+      outline: none;
+      box-sizing: border-box;
+    }
+
+    .facility-form input:focus,
+    .facility-form textarea:focus {
+      border-color: var(--primary);
+    }
+
+    .facility-form input::placeholder,
+    .facility-form textarea::placeholder {
+      color: var(--text-muted);
+    }
+
+    .facility-form textarea {
+      resize: vertical;
+      min-height: 100px;
+      font-family: inherit;
+    }
+
+    .facility-form button {
+      padding: 14px 28px;
+      border-radius: 12px;
+      border: none;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: white;
+      font-size: 16px;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      margin-top: 8px;
+    }
+
+    .facility-form button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(6, 182, 212, 0.3);
+    }
+
+    .facility-success {
+      display: none;
+      color: var(--accent);
+      font-size: 18px;
+      font-weight: 600;
+      text-align: center;
     }
 
     /* ============ FOOTER ============ */
@@ -1029,7 +1174,9 @@
       }
 
       .features-grid,
-      .steps-grid {
+      .steps-grid,
+      .coach-grid,
+      .cta-highlights {
         grid-template-columns: 1fr;
         gap: 24px;
       }
@@ -1160,7 +1307,7 @@
         <li><a href="#features" data-sv="Funktioner" data-en="Features">Funktioner</a></li>
         <li><a href="#how" data-sv="Hur det fungerar" data-en="How it works">Hur det fungerar</a></li>
         <li><a href="#facilities" data-sv="Anläggningar" data-en="Facilities">Anläggningar</a></li>
-        <li><a href="#book" data-sv="Boka" data-en="Book">Boka</a></li>
+        <li><a href="#coaches" data-sv="För coacher" data-en="For coaches">För coacher</a></li>
         <li><a href="#contact" data-sv="Kontakt" data-en="Contact">Kontakt</a></li>
       </ul>
       <div class="nav-right">
@@ -1177,7 +1324,7 @@
       <a href="#features" onclick="closeMenu()" data-sv="Funktioner" data-en="Features">Funktioner</a>
       <a href="#how" onclick="closeMenu()" data-sv="Hur det fungerar" data-en="How it works">Hur det fungerar</a>
       <a href="#facilities" onclick="closeMenu()" data-sv="Anläggningar" data-en="Facilities">Anläggningar</a>
-      <a href="#book" onclick="closeMenu()" data-sv="Boka" data-en="Book">Boka</a>
+      <a href="#coaches" onclick="closeMenu()" data-sv="För coacher" data-en="For coaches">För coacher</a>
       <a href="#contact" onclick="closeMenu()" data-sv="Kontakt" data-en="Contact">Kontakt</a>
       <a href="#contact" data-sv="Intresseanmälan" data-en="Register interest">Intresseanmälan</a>
     </div>
@@ -1521,9 +1668,8 @@
           <div class="facility-content">
             <span class="facility-badge" data-sv="Vinter (inomhus)" data-en="Winter (indoor)">Vinter (inomhus)</span>
             <h3 class="facility-title">WE Sporthall</h3>
-            <p class="facility-desc" data-sv="Inomhusanläggning med Foresight GCQuad-simulatorer. Perfekt för vinterträning med fullständig bolldata." data-en="Indoor facility with Foresight GCQuad simulators. Perfect for winter practice with complete ball data.">
-              Inomhusanläggning med Foresight GCQuad-simulatorer.
-              Perfekt för vinterträning med fullständig bolldata.
+            <p class="facility-desc" data-sv="Inomhusanläggning med Foresight GCQuad-simulatorer, gruppträningar m.m." data-en="Indoor facility with Foresight GCQuad simulators, group practice and more.">
+              Inomhusanläggning med Foresight GCQuad-simulatorer, gruppträningar m.m.
             </p>
             <ul class="facility-features">
               <li data-sv="2 simulatorer med Foresight GCQuad" data-en="2 simulators with Foresight GCQuad">2 simulatorer med Foresight GCQuad</li>
@@ -1534,6 +1680,86 @@
               <a href="https://wehalsa.se/indoor-golf/" class="facility-link" target="_blank" rel="noopener" data-sv="Mer info &#x2192;" data-en="More info &#x2192;">Mer info &#x2192;</a>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COACH SECTION -->
+  <section class="coach-section" id="coaches">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge" data-sv="För coacher" data-en="For coaches">För coacher</div>
+        <h2 class="section-title" data-sv="Är du tränare?" data-en="Are you a coach?">Är du tränare?</h2>
+        <p class="section-subtitle" data-sv="Bjud in dina spelare utan extra kostnad. Följ deras utveckling, genomför tester och ge feedback — allt på ett ställe." data-en="Invite your players at no extra cost. Track their progress, run tests and give feedback — all in one place.">
+          Bjud in dina spelare utan extra kostnad. Följ deras utveckling, genomför tester och ge feedback — allt på ett ställe.
+        </p>
+      </div>
+
+      <div class="coach-grid">
+        <div class="coach-card">
+          <div class="coach-card-icon">&#x1F4CA;</div>
+          <h3 class="coach-card-title" data-sv="Följ dina spelare" data-en="Follow your players">Följ dina spelare</h3>
+          <p class="coach-card-desc" data-sv="Se rundor, tester och statistik från alla dina spelare på en samlad dashboard." data-en="See rounds, tests and statistics from all your players in one dashboard.">
+            Se rundor, tester och statistik från alla dina spelare på en samlad dashboard.
+          </p>
+        </div>
+
+        <div class="coach-card">
+          <div class="coach-card-icon">&#x1F3AF;</div>
+          <h3 class="coach-card-title" data-sv="Testa under lektioner" data-en="Run tests during lessons">Testa under lektioner</h3>
+          <p class="coach-card-desc" data-sv="Genomför spridningstester och PEI direkt åt spelaren — datan sparas på deras konto." data-en="Run dispersion tests and PEI directly for your player — the data is saved to their account.">
+            Genomför spridningstester och PEI direkt åt spelaren — datan sparas på deras konto.
+          </p>
+        </div>
+
+        <div class="coach-card">
+          <div class="coach-card-icon">&#x1F4AC;</div>
+          <h3 class="coach-card-title" data-sv="Ge feedback i realtid" data-en="Give feedback in real time">Ge feedback i realtid</h3>
+          <p class="coach-card-desc" data-sv="Skicka anteckningar, lektionslogg och övningar som spelaren ser direkt i sin app." data-en="Send notes, lesson logs and drills that your player sees instantly in their app.">
+            Skicka anteckningar, lektionslogg och övningar som spelaren ser direkt i sin app.
+          </p>
+        </div>
+
+        <div class="coach-card">
+          <div class="coach-card-icon">&#x1F193;</div>
+          <h3 class="coach-card-title" data-sv="Gratis för coacher" data-en="Free for coaches">Gratis för coacher</h3>
+          <p class="coach-card-desc" data-sv="Coachkontot är kostnadsfritt — bara dina spelare betalar för sin prenumeration." data-en="The coach account is free — only your players pay for their subscription.">
+            Coachkontot är kostnadsfritt — bara dina spelare betalar för sin prenumeration.
+          </p>
+        </div>
+      </div>
+
+      <div class="cta-box">
+        <h2 class="cta-title" data-sv="Bli en IMPA-anläggning" data-en="Become an IMPA facility">Bli en IMPA-anläggning</h2>
+        <p class="cta-subtitle" data-sv="Driver du en golfanläggning eller jobbar som tränare? Hör av dig så berättar vi vilka fördelar du kan få genom att bli en del av IMPA Golf — för dig och dina spelare." data-en="Run a golf facility or work as a coach? Get in touch and we'll tell you what you can gain from joining IMPA Golf — for yourself and your players.">
+          Driver du en golfanläggning eller jobbar som tränare? Hör av dig så berättar vi vilka fördelar du kan få genom att bli en del av IMPA Golf — för dig och dina spelare.
+        </p>
+        <div class="cta-highlights">
+          <div class="cta-highlight">
+            <div class="cta-highlight-icon">&#x1F3CC;</div>
+            <h4 class="cta-highlight-title" data-sv="Paketlösning för juniorverksamheter" data-en="Package solution for junior programs">Paketlösning för juniorverksamheter</h4>
+            <p class="cta-highlight-desc" data-sv="Vi erbjuder en skräddarsydd lösning på klubbnivå för dig som vill ge dina juniorer ett verktyg som gör träningen mätbar och utvecklingen synlig." data-en="We offer a tailored club-level solution for those who want to give their juniors a tool that makes practice measurable and development visible.">
+              Vi erbjuder en skräddarsydd lösning på klubbnivå för dig som vill ge dina juniorer ett verktyg som gör träningen mätbar och utvecklingen synlig.
+            </p>
+          </div>
+          <div class="cta-highlight">
+            <div class="cta-highlight-icon">&#x1F4CA;</div>
+            <h4 class="cta-highlight-title" data-sv="För anläggningar med simulator eller data-driven range" data-en="For facilities with simulators or data-driven ranges">För anläggningar med simulator eller data-driven range</h4>
+            <p class="cta-highlight-desc" data-sv="Driver du en anläggning med Foresight, Trackman eller TopTracer? IMPA Golf hjälper dina spelare att samla all sin data på ett ställe — och tar träningen från enskilda pass till långsiktig utveckling." data-en="Run a facility with Foresight, Trackman or TopTracer? IMPA Golf helps your players collect all their data in one place — turning individual sessions into long-term development.">
+              Driver du en anläggning med Foresight, Trackman eller TopTracer? IMPA Golf hjälper dina spelare att samla all sin data på ett ställe — och tar träningen från enskilda pass till långsiktig utveckling.
+            </p>
+          </div>
+        </div>
+        <form class="facility-form" id="facility-form">
+          <input type="text" id="facility-name" required placeholder="Namn" data-sv-placeholder="Namn" data-en-placeholder="Name">
+          <input type="text" id="facility-club" required placeholder="Anläggning eller klubb" data-sv-placeholder="Anläggning eller klubb" data-en-placeholder="Facility or club">
+          <input type="email" id="facility-email" required placeholder="din@email.com">
+          <textarea id="facility-message" placeholder="Berätta gärna lite om dig själv eller din anläggning (valfritt)" data-sv-placeholder="Berätta gärna lite om dig själv eller din anläggning (valfritt)" data-en-placeholder="Tell us about yourself or your facility (optional)"></textarea>
+          <button type="submit" data-sv="Skicka förfrågan" data-en="Send request">Skicka förfrågan</button>
+        </form>
+        <div class="facility-success" id="facility-success">
+          <span>&#x2713;</span> <span data-sv="Tack! Vi hör av oss inom kort." data-en="Thanks! We'll get back to you soon.">Tack! Vi hör av oss inom kort.</span>
         </div>
       </div>
     </div>
@@ -1640,6 +1866,11 @@
           }
         }
       });
+
+      document.querySelectorAll('[data-sv-placeholder]').forEach(function(el) {
+        var ph = el.getAttribute('data-' + lang + '-placeholder');
+        if (ph) el.placeholder = ph;
+      });
     }
 
     function toggleLang() {
@@ -1673,6 +1904,41 @@
         .catch(function() {
           interestForm.style.display = 'none';
           document.getElementById('cta-success').style.display = 'block';
+        });
+      });
+    }
+
+    // Facility/Coach form — AJAX submit
+    var facilityForm = document.getElementById('facility-form');
+    if (facilityForm) {
+      facilityForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var name = document.getElementById('facility-name').value;
+        var club = document.getElementById('facility-club').value;
+        var email = document.getElementById('facility-email').value;
+        var message = document.getElementById('facility-message').value;
+        var btn = facilityForm.querySelector('button');
+        btn.disabled = true;
+        btn.textContent = '...';
+
+        fetch('https://formsubmit.co/ajax/info@impagolf.com', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({
+            name: name,
+            club: club,
+            email: email,
+            message: message,
+            _subject: 'IMPA Anläggning - intresseanmälan'
+          })
+        })
+        .then(function() {
+          facilityForm.style.display = 'none';
+          document.getElementById('facility-success').style.display = 'block';
+        })
+        .catch(function() {
+          facilityForm.style.display = 'none';
+          document.getElementById('facility-success').style.display = 'block';
         });
       });
     }
