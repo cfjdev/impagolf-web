@@ -98,6 +98,7 @@
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 80px;
     }
 
     body {
@@ -683,11 +684,13 @@
       border-radius: 26px;
       overflow: hidden;
       background: #0a0a0f;
+      aspect-ratio: 9 / 19.5;
     }
 
     .iphone-screen img {
       width: 100%;
-      height: auto;
+      height: 100%;
+      object-fit: cover;
       display: block;
     }
 
@@ -1734,7 +1737,7 @@
     <div class="container">
       <div class="section-header">
         <div class="section-badge" data-sv="Anläggningar" data-en="Facilities">Anläggningar</div>
-        <h2 class="section-title" data-sv="Besök en IMPA-anläggning" data-en="Visit an IMPA facility">Besök en IMPA-anläggning</h2>
+        <h2 class="section-title" data-sv="Träna hos våra samarbetspartners" data-en="Practice with our partners">Träna hos våra samarbetspartners</h2>
         <p class="section-subtitle" data-sv="Kombinera appen med riktiga träningspass på våra anläggningar i Stockholm." data-en="Combine the app with real practice sessions at our facilities near Stockholm.">
           Kombinera appen med riktiga träningspass på våra anläggningar i Stockholm.
         </p>
@@ -1787,11 +1790,11 @@
     </div>
   </section>
 
-  <!-- BECOME IMPA FACILITY -->
+  <!-- PARTNER WITH IMPA -->
   <section class="cta-section" id="become-facility">
     <div class="container">
       <div class="cta-box">
-        <h2 class="cta-title" data-sv="Bli en IMPA-anläggning" data-en="Become an IMPA facility">Bli en IMPA-anläggning</h2>
+        <h2 class="cta-title" data-sv="Vill du samarbeta med IMPA?" data-en="Want to partner with IMPA?">Vill du samarbeta med IMPA?</h2>
         <p class="cta-subtitle" data-sv="Jobbar du på en simulatoranläggning, driving range eller golfklubb? Hör av dig så berättar vi vilka fördelar du kan få genom att bli en del av IMPA Golf." data-en="Do you work at a simulator facility, driving range or golf club? Get in touch and we'll tell you what you can gain from joining IMPA Golf.">
           Jobbar du på en simulatoranläggning, driving range eller golfklubb? Hör av dig så berättar vi vilka fördelar du kan få genom att bli en del av IMPA Golf.
         </p>
@@ -1967,7 +1970,7 @@
             club: club,
             email: email,
             message: message,
-            _subject: 'IMPA Anläggning - intresseanmälan'
+            _subject: 'IMPA Samarbete - intresseanmälan'
           })
         })
         .then(function() {
