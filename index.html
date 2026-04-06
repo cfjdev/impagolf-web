@@ -29,10 +29,11 @@
   <meta name="twitter:description" content="Data-driven golfträning. Analysera din statistik, hitta dina svagheter och få personliga träningsrekommendationer.">
   <meta name="twitter:image" content="https://impagolf.com/og-image.png">
 
-  <!-- Fonts -->
+  <!-- Fonts (async to avoid render blocking) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
 
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -802,7 +803,7 @@
       display: flex;
       align-items: center;
       gap: 8px;
-      color: var(--text-muted);
+      color: var(--text-gray);
       font-size: 14px;
       margin-bottom: 8px;
     }
@@ -1206,6 +1207,7 @@
     </div>
   </nav>
 
+  <main>
   <!-- HERO SECTION -->
   <section class="hero">
     <div class="container">
@@ -1237,7 +1239,7 @@
           <div class="phone-frame">
             <picture>
               <source srcset="images/screenshot-gaping.webp" type="image/webp">
-              <img src="images/screenshot-gaping.png" alt="IMPA Golf - Klubb-gaping visualisering" width="256" height="554">
+              <img src="images/screenshot-gaping.png" alt="IMPA Golf - Klubb-gaping visualisering" width="600" height="1300" fetchpriority="high">
             </picture>
           </div>
         </div>
@@ -1584,6 +1586,8 @@
       </div>
     </div>
   </section>
+
+  </main>
 
   <!-- FOOTER -->
   <footer class="footer">
