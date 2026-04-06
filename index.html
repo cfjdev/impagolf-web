@@ -761,10 +761,14 @@
     .facility-image {
       height: 200px;
       background: linear-gradient(135deg, var(--dark-card), var(--dark-border));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 48px;
+      overflow: hidden;
+    }
+
+    .facility-image iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      filter: grayscale(0.3) brightness(0.85);
     }
 
     .facility-content {
@@ -1522,7 +1526,9 @@
 
       <div class="facilities-grid" id="book">
         <div class="facility-card">
-          <div class="facility-image">&#x1F3CC;&#xFE0F;</div>
+          <div class="facility-image">
+            <iframe src="https://maps.google.com/maps?q=WE+Sporthall+Torpgatan+7+Sigtuna&t=k&z=15&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="WE Sporthall Sigtuna"></iframe>
+          </div>
           <div class="facility-content">
             <span class="facility-badge" data-sv="Vinter (inomhus)" data-en="Winter (indoor)">Vinter (inomhus)</span>
             <h3 class="facility-title">IMPA Golf Sigtuna</h3>
@@ -1542,7 +1548,9 @@
         </div>
 
         <div class="facility-card">
-          <div class="facility-image">&#x2600;&#xFE0F;</div>
+          <div class="facility-image">
+            <iframe src="https://maps.google.com/maps?q=Arlandastad+Golf&t=k&z=15&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Arlandastad Golf"></iframe>
+          </div>
           <div class="facility-content">
             <span class="facility-badge" data-sv="Sommar (utomhus)" data-en="Summer (outdoor)">Sommar (utomhus)</span>
             <h3 class="facility-title">IMPA Golf Arlandastad</h3>
